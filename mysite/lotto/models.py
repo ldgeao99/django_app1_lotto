@@ -20,3 +20,6 @@ class GuessNumbers(models.Model):  # models 클래스의 자식클래스인 Mode
             self.lottos += str(guess) + '\n'
         self.update_date = timezone.now()   # 현재시간을 가져옴
         self.save()                         # 오브젝트를 DB에 저장하는 메소드
+
+    def __str__(self):
+        return "%s %s" % (self.name, self.text)
