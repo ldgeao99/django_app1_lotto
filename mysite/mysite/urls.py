@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from lotto import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls), #localhost:8000/admin일 때
+    url(r'^$', views.index),          #localhost:8000/일 때 views.index에 연결해준다.
 ]
