@@ -10,6 +10,7 @@ class GuessNumbers(models.Model):  # models 클래스의 자식클래스인 Mode
     num_lotto = models.IntegerField(default=5)
     update_date = models.DateTimeField()
 
+    # 로또 번호 생성 및 데이터베이스 저장
     def generate(self):
         self.lottos=""
         origin = list(range(1,46))
