@@ -7,17 +7,20 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-  <link rel=”stylesheet” href=”{% static ‘css/lotto.css’ %}”>
+  <link rel="stylesheet" href="{% static 'css/lotto.css' %}">
 </head>
 
 <body>
   <div class="page-header">
+  <pre>{{lottos}}</pre>
   <h1>My Lotto Page</h1>
   </div>
   <div class="container lotto">
-    <h2>당첨 기원 (2)</h2>
-    <p> last update:2000/1/1</p>
-    <p> 1, 10, 15, 20, 30 </p>
+    {% for lotto in lottos %}
+    <h2>{{lotto.text}}</h2>
+    <p> {{lotto.update_date}}</p>
+    <p> {{lotto.lottos|linebreaksbr}}</p>
+    {% endfor %}
   </div>
 </body>
 </html>
