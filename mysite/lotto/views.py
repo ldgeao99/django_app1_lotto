@@ -22,3 +22,7 @@ def post(request):
     else:
         form = PostForm()
         return render(request, "lotto/form.html", {"form" : form})
+
+def detail(request, lottokey):
+    lotto = GuessNumbers.objects.get(pk = lottokey) # pk는 primary key를 의미한다.
+    return render(request, "lotto/detail.html", {"lotto" : lotto})
